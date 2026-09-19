@@ -1,6 +1,14 @@
 # Serum Bass Memories Variations
 
-**10 brand new working Serum .fxp bass presets** inspired by `AU_MTF_bass_synth_memories_imposing.fxp`.
+> **CURRENT ARTIFACT STATUS: PLACEHOLDER**
+>
+> The committed `presets.zip.b64` is currently a placeholder string, not the
+> original preset archive. The repository therefore does **not** presently
+> contain downloadable working presets. The reverse-engineering notes and decoder
+> are preserved, but the real payload must be restored and live-tested in Serum
+> before this repo should be presented as a usable preset pack.
+>
+Historical project for 10 Serum `.fxp` bass preset variations inspired by `AU_MTF_bass_synth_memories_imposing.fxp`.
 
 These are valid, loadable variations created by reverse-engineering the Serum 1 FXP format (zlib-compressed opaque chunk + trailing wavetable data), then systematically varying key synthesis parameters while preserving the core character and embedded data.
 
@@ -30,6 +38,6 @@ These are valid, loadable variations created by reverse-engineering the Serum 1 
 - Or clone and decode.
 - Drop the .fxp into Serum's User presets folder.
 
-Tested structure-wise to match original (names, decompress, trailing WT preserved). Should load and sound as inspired bass variations in Serum 1 or Serum 2 legacy mode.
+Automated checks validate the encoded ZIP, preset count and VST/FXP headers; the repository also documents the structure-level reconstruction work. Actual plugin loading and sound remain a separate Serum-host verification surface.
 
 Enjoy!
