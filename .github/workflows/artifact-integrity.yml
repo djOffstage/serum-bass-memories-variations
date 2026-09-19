@@ -26,8 +26,9 @@ jobs:
           from pathlib import Path
           import base64, io, zipfile
 
-          encoded = Path("presets.zip.b64").read_text(encoding="utf-8")
-          raw = base64.b64decode(encoded)
+          encoded = "".join(Path("presets.zip.b64").read_text(encoding="utf-8").split())
+          encoded += "=" * (-len(encoded) % 4)
+          raw = base64.b64decode(encoded, validate=True)
           with zipfile.ZipFile(io.BytesIO(raw)) as zf:
               bad = zf.testzip()
               assert bad is None, f"corrupt member: {bad}"
